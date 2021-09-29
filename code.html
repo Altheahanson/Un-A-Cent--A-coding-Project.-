@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Althea Hanson</title>
+    <title>Un à Cent: A Coding Project By Althea Hanson</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,6 +12,11 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
+
+     <!-- Google Fonts for Cinzel Decorative -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
     
      <link href="css/site.css" rel="stylesheet">
      <link href="css/prism.css" rel="stylesheet">
@@ -22,8 +27,8 @@
 <!-- === Nav Section === -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="img/Althea Hanson Mark transparent.png" class="d-inline align-text-top" 
-                width="30" height="24"> APP NAME</a>
+            <a class="navbar-brand logoFont" href="#"><img src="img/Althea Hanson Mark transparent.png" class="d-inline align-text-top" 
+                width="30" height="24"> Un à Cent</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,7 +45,7 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/Altheahanson/Un-A-Cent--A-coding-Project.- ">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="#">About</a>
@@ -52,14 +57,77 @@
     <!-- === Main Section === -->
     <main class="flex-shrink-0">
     <div class="container py-5 px-5 mt-5">
-        <h2 class="border-1 border-bottom border-dark">THE CODE</h2>
+        <h2 class="border-1 border-bottom border-dark">The Code for Un à Cent</h2>
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
                 <pre class="line-numbers"><code class="language-javascript">
-                    //Call Hello World
-                    function HelloWorld(){
-                    alert("hello World");
-                    }
+                    //get the values from the page
+//starts or controller function
+function getValues(){
+   //get values from the page
+   let startValue = document.getElementById("startValue").value;
+   let endValue = document.getElementById("endValue").value;
+   //We need to validate our input
+   //parse into integers
+   startValue = parseInt(startValue);
+   endValue = parseInt(endValue);
+
+   if(Number.isInteger(startValue) && Number.isInteger(endValue)){
+      //we call generateNumbers
+      let numbers = generateNumbers(startValue, endValue);
+         //we call displayNumbers
+      displayNumbers(numbers);
+   }else {
+      alert("You must enter integers");
+   }
+
+
+    
+}
+
+//generate numbers from the startValue to the endValue
+//logic function(s)
+function generateNumbers(sValue, eValue){
+
+   let numbers =[];
+
+   //we want to get to get all numbers from start to end
+   for(let index = sValue; index <= eValue; index++){
+      //this will execute in a loop until index = eValue
+      numbers.push(index);
+   }
+   
+   return numbers;
+   
+}
+
+//display the numbers and mark even numbers bold
+//display or view functions
+function displayNumbers(numbers){
+
+   let templateRows = "";
+
+   for (let index = 0; index < numbers.length; index++) {
+
+      let className = "even";
+
+      let number = numbers[index];
+
+      if(number % 2 == 0){
+         className = "even";
+      }
+      else {
+         className ="odd";
+
+      }
+      //This does not render correctly with Prism. See the source
+      templateRows += `<tr><td class="${className}">${number}</td></tr>`;
+      
+   }
+
+   document.getElementById("results").innerHTML = templateRows;
+
+}
                 </code>
                 </pre>
             </div>
@@ -83,9 +151,9 @@
               </div>
               <div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
                     <div class="row">
-                        <div class="col social"><a href="#" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></div>
-                        <div class="col social"><a href="#" target="_blank" ><i class="fab fa-github fa-2x"></i></a></div>
-                        <div class="col social"><a href="#" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></div>
+                        <div class="col social"><a href="https://www.linkedin.com/in/althea-hanson/ " target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></div>
+                        <div class="col social"><a href="https://github.com/Altheahanson?tab=repositories" target="_blank" ><i class="fab fa-github fa-2x"></i></a></div>
+                        <div class="col social"><a href="https://twitter.com/lifeoftia1?lang=en" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></div>
                     </div>
               </div>
           </div>
