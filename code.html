@@ -133,8 +133,29 @@ function displayNumbers(numbers){
             </div>
             <div class="col-lg-4">
                 <p> The code is structured in one function</p>
-                <h5> Hello World</h5>
-                <p> Hello world is a function that displays a message of "Hello World</p>
+                <h5> getValues</h5>
+                <p> getValues accepts(gets) the user input from the page. It utilizes 
+                    <strong>getElementById</strong> to pull the values from the page. It passes those 
+                    values to the <strong>generateNumbers</strong> function. This function <strong>generateNumbers</strong>
+                    returns an array of values and passes that array to the <strong>displayNumbers</strong> function.
+                </p>
+                <h5>generateNumbers</h5>
+                <p> generateNumbers takes into two parameters startValue and endValue. We create a variable (numbers)
+                    that holds an array. A for loop is used to generate all of the numbers between <strong>startValue</strong>
+                    and <strong>endValue</strong>.
+                </p>
+                <h5>displayNumbers</h5>
+                <p> displayNumbers takes in one parameter numbers. The variable numbers is an array that holds values between
+                    <strong>startValue</strong> and <strong>endValue</strong>. We create a variable (classNumber) that holds the
+                    name of a CSS class that we will use to bold the numbers. We create a variable templateRows that will hold the 
+                    HTML we will write to the page.
+                    <br><br>
+                    A for loop is used to check all of the numbers to see if they are even or odd. The remainder operator(%) is used
+                    to see if the number is divisable by two. If it returns zero, then it is even. If not (else), then it is odd. The 
+                    correct className is injected into the html row for display. Each interaction of the loop adds to the 
+                    templateRows variable. At the end of the loop, the resulting HTML rows are written to the page.
+
+                </p>
             </div>
         </div>
     </div>
