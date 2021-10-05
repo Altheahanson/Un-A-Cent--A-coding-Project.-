@@ -16,10 +16,7 @@ function getValues(){
       displayNumbers(numbers);
    }else {
       alert("You must enter integers");
-   }
-
-
-    
+   }  
 }
 
 //generate numbers from the startValue to the endValue
@@ -27,15 +24,12 @@ function getValues(){
 function generateNumbers(sValue, eValue){
 
    let numbers =[];
-
    //we want to get to get all numbers from start to end
    for(let index = sValue; index <= eValue; index++){
       //this will execute in a loop until index = eValue
       numbers.push(index);
    }
-   
-   return numbers;
-   
+   return numbers;  
 }
 
 //display the numbers and mark even numbers bold
@@ -45,22 +39,15 @@ function displayNumbers(numbers){
    let templateRows = "";
 
    for (let index = 0; index < numbers.length; index++) {
-
       let className = "even";
-
       let number = numbers[index];
-
       if(number % 2 == 0){
          className = "even";
       }
       else {
          className ="odd";
-
       }
       templateRows += `<tr><td class="${className}">${number}</td></tr>`;
-      
    }
-
    document.getElementById("results").innerHTML = templateRows;
-
 }
